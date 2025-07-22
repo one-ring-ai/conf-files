@@ -1,0 +1,58 @@
+version: 1.0.0
+
+cache: false
+
+interface:
+  customWelcome: "One Ring to Generate All, One Ring to Test All, One Ring to Control All, and in the Dashboard Unleash Them"
+  privacyPolicy:
+    externalUrl: 'https://example.com/privacy-policy'
+    openNewTab: true
+
+  termsOfService:
+    externalUrl: 'https://example.com/tos'
+    openNewTab: true
+    modalAcceptance: true
+    modalTitle: "Terms of Service for One Ring"
+    modalContent: |
+      # Terms and Conditions for One Ring
+
+      work in progress
+
+  endpointsMenu: true
+  modelSelect: true
+  parameters: true
+  sidePanel: true
+  presets: true
+  prompts: true
+  bookmarks: true
+  multiConvo: true
+  agents: true
+
+registration:
+  socialLogins: ['github', 'google', 'discord', 'openid', 'facebook', 'apple']
+
+imageGenerationPricing:
+  generation:
+    imagen-4: 0.04
+  upscaling:
+    real-esrgan: 0.0022
+  modify:
+    flux-kontext: 0.08
+
+endpoints:
+  custom:
+    - name: 'OpenRouter'
+      apiKey: '${OPENROUTER_KEY}'
+      baseURL: 'https://openrouter.ai/api/v1'
+      models:
+        default: ['google/gemini-2.5-flash']
+        fetch: true
+      titleConvo: true
+      titleModel: 'google/gemini-2.5-flash'
+      dropParams: ['stop']
+      modelDisplayLabel: 'OpenRouter'
+
+webSearch:
+  web2mdApiUrl: ${WEB2MD_API_URL}
+  searchProvider: "web2md"
+  maxResults: 5

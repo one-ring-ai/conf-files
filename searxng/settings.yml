@@ -1,0 +1,35 @@
+# see https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings
+use_default_settings: true
+
+server:
+  secret_key: "your_secret_key" # replaced using SEARXNG_SECRET docker env var
+  limiter: false
+  image_proxy: true
+  port: 8080
+  bind_address : "0.0.0.0"
+
+ui:
+  static_use_hash: true
+search:
+  safe_search: 0
+  autocomplete: ""
+  default_lang: ""
+  formats:
+    - html
+    - json
+
+outgoing:
+  request_timeout: 10.0
+  max_request_timeout: 30.0
+  useragent_suffix: ""
+  pool_connections: 100
+  pool_maxsize: 20
+  enable_http2: true
+ 
+
+engines:
+  - name: wikidata
+    engine: wikidata
+    timeout: 30
+    shortcut: wd
+    categories: general
