@@ -33,11 +33,11 @@ registration:
 
 imageGenerationPricing:
   generation:
-    imagen-4: 0.04
+    imagen-4: 0.08
   upscaling:
     real-esrgan: 0.0022
   modify:
-    flux-kontext: 0.08
+    flux-kontext: 0.1
 
 endpoints:
   custom:
